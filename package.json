@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "production": "npm run-script build && node server.js",
+    "start": "npm run-script build && node server.js",
     "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run-script build && cd ../",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "devstart": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -33,6 +33,9 @@
   "main": "server.js",
   "devDependencies": {
     "concurrently": "^4.0.1"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
